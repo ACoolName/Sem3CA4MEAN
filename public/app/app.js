@@ -1,17 +1,17 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myAppRename', [
-  'ngRoute',
-  'myAppRename.controllers',
-  'myAppRename.directives',
-  'myAppRename.services',
-  'myAppRename.factories',
-  'myAppRename.filters',
-  'myAppRename.view1',
-  'myAppRename.view2',
-  'myAppRename.view3'
-]).
-config(['$routeProvider', function($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+angular.module('meanApp', [
+    'ngRoute',
+    'meanApp.controllers',
+    'meanApp.directives',
+    'meanApp.services',
+    'meanApp.factories',
+    'meanApp.filters',
+    'meanApp.view1',
+    'meanApp.view2',
+    'meanApp.view3'
+])
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.otherwise({redirectTo: '/view1'});
+    }]);

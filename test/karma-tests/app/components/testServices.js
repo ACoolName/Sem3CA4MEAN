@@ -1,23 +1,23 @@
 'use strict';
 
-describe('myAppRename.services', function () {
+describe('meanApp.services', function () {
 
-  beforeEach(module('myAppRename.services'));
+    beforeEach(module('meanApp.services'));
 
-  describe('InfoService', function () {
+    describe('InfoService', function () {
 
-    var infoService;
-    beforeEach(inject(function (_InfoService_) {
-      infoService = _InfoService_;
-    }));
+        var infoService;
+        beforeEach(inject(function (_InfoService_) {
+            infoService = _InfoService_;
+        }));
 
-    it('Should be Hello World from a Service', function () {
-      expect(infoService.getInfo()).toBe("Hello World from a Service");
+        it('Should be Hello World from a Service', function () {
+            expect(infoService.getInfo()).toBe("Hello World from a Service");
+        });
     });
-  });
 
 
-  describe('XXXService', function () {
+    describe('XXXService', function () {
 
-  });
+    });
 });

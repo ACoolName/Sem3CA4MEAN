@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "Sem3CA4MEAN",
+  "description": "Semester 3 CA4 MEAN project",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/ACoolName/Sem3CA4MEAN",
   "license": "MIT",
   "private": true,
   "dependencies": {

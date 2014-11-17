@@ -1,20 +1,20 @@
-describe('myAppRename.factories', function () {
+describe('meanApp.factories', function () {
 
-  beforeEach(module('myAppRename.factories'));
+    beforeEach(module('meanApp.factories'));
 
-  describe('InfoFactory', function () {
-    var infoFactory;
-    beforeEach(inject(function (_InfoFactory_) {
-      infoFactory = _InfoFactory_;
-    }));
+    describe('InfoFactory', function () {
+        var infoFactory;
+        beforeEach(inject(function (_InfoFactory_) {
+            infoFactory = _InfoFactory_;
+        }));
 
-    it('Should be Hello World from a Factory', function () {
-      expect(infoFactory.getInfo()).toBe("Hello World from a Factory");
+        it('Should be Hello World from a Factory', function () {
+            expect(infoFactory.getInfo()).toBe("Hello World from a Factory");
+        });
     });
-  });
 
 
-  describe('XXXFactory', function () {
+    describe('XXXFactory', function () {
 
-  });
+    });
 });

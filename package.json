@@ -23,12 +23,14 @@
     "karma-junit-reporter": "^0.2.2",
     "mocha": "^2.0.1",
     "protractor": "^1.1.1",
+    "request": "^2.48.0",
     "shelljs": "^0.2.6",
-    "should": "^4.1.0"
+    "should": "^4.1.0",
+    "sinon": "^1.12.1"
   },
   "scripts": {
     "pretestserver": "npm install",
-    "testserver": "node ./bin/www 12345",
+    "testserver": "node ./bin/www 12345 test",
     "postinstall": "bower install",
     "prestart": "npm install",
     "start": "node ./bin/www",

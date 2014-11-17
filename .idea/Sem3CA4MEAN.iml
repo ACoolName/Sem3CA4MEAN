@@ -8,5 +8,11 @@
     <orderEntry type="library" name="ExpressAngularSeed node_modules" level="project" />
     <orderEntry type="library" name="mocha-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="should-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="angularjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="jasmine-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="Node.js v0.10.32 Core Modules" level="application" />
+    <orderEntry type="library" name="sinon-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="ExpressAngularSeedV2 node_modules" level="project" />
   </component>
 </module>
+
