@@ -13,5 +13,7 @@ describe('meanApp.view2 view2Ctrl', function () {
             $scope = $rootScope.$new();
             $controller('View2Ctrl', {$scope: $scope});
         }));
+
+
     });
 });

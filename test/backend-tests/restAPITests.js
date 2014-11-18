@@ -24,6 +24,7 @@ describe('REST API for /user', function () {
     });
 
     beforeEach(function (done) {
+        done();
     });
 
     after(function () {  //Stop server after the test

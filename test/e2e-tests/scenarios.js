@@ -3,7 +3,7 @@
 global.TEST_DATABASE = "mongodb://localhost/TestDataBase_MEAN";
 var db = require('../../server/model/db');
 var mongoose = require("mongoose");
-var User = mongoose.model("User");
+var wiki = require("Wiki");
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
@@ -12,35 +12,20 @@ describe('my app', function () {
     browser.get('/');
 
     it('should automatically redirect to /view1 when location hash/fragment is empty', function () {
-        expect(browser.getLocationAbsUrl()).toMatch("/view1");
+        expect(browser.getLocationAbsUrl()).toMatch("/wiki");
     });
 
 
-    describe('view1', function () {
+    describe('wiki', function () {
 
         beforeEach(function () {
-            browser.get('#/view1');
+            browser.get('#/wiki');
         });
 
 
-        it('should render view1 when user navigates to /view1', function () {
-            expect(element.all(by.css('[ng-view] p')).first().getText()).
-                toMatch(/partial for view 1/);
-        });
-
-    });
-
-
-    describe('view2', function () {
-
-        beforeEach(function () {
-            browser.get('#/view2');
-        });
-
-
-        it('should render view2 when user navigates to /view2', function () {
-            expect(element.all(by.css('[ng-view] p')).first().getText()).
-                toMatch(/partial for view 2/);
+        it('should render view1 when user navigates to /wiki', function () {
+            var wikis = element.all(by.repeater('item in items'));
+            expect(wikis.count()).toEqual(2);
         });
 
     });
