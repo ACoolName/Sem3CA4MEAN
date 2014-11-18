@@ -1,4 +1,4 @@
-describe('meanApp.view2 view2Ctrl', function () {
+describe('meanApp.categories view2Ctrl', function () {
 
     describe('myController', function () {
         var $scope;
@@ -12,7 +12,7 @@ describe('meanApp.view2 view2Ctrl', function () {
         beforeEach(inject(function ($rootScope, $controller) {
             $scope = $rootScope.$new();
             $controller('View2Ctrl', {$scope: $scope});
-        }));
+        }));5
 
 
     });

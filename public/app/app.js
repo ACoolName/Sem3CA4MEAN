@@ -10,9 +10,8 @@ angular.module('meanApp', [
     'meanApp.filters',
     'meanApp.view1',
     'meanApp.view2',
-    'meanApp.view3',
     'ui.bootstrap'
 ])
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/view1'});
+        $routeProvider.otherwise({redirectTo: '/wiki'});
     }]);

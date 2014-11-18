@@ -1,7 +1,7 @@
 'use strict';
 
-describe('meanApp.filters', function () {
-    beforeEach(module('meanApp'));
+describe('meanApp.filters module', function () {
+    beforeEach(module('meanApp.filters'));
 
     describe('checkmark', function () {
 
@@ -13,8 +13,5 @@ describe('meanApp.filters', function () {
     });
 
 
-    describe('filterXXXX', function () {
-
-    })
 });
 

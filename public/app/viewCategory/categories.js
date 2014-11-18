@@ -4,7 +4,7 @@ angular.module('meanApp.view2', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/categories', {
-            templateUrl: 'app/view2/categories.html',
+            templateUrl: 'app/viewCategory/categories.html',
             controller: 'catCtrl'
         });
     }])
