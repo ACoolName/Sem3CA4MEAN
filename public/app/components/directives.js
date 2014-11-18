@@ -13,3 +13,16 @@ angular.module('meanApp.directives', [])
                 '</ul>'
         };
     });
+
+
+angular.module('meanApp.directives', []).
+    directive('wikis', function () {
+        return {
+            restrict: 'AE',
+            replace: 'true',
+            template:  '<ul>'+
+            '<p style="color: red">{{error}}</p>'+
+            '<li ng-repeat="wiki in wikis | filter:searchCriteria:strict"><a href="#">{{wiki.title}}</a></li>'+
+            '</ul>'
+        };
+    });
