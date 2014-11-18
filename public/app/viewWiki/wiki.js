@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('meanApp.view1', ['ngRoute'])
+angular.module('meanApp.viewWiki', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/wiki', {
-            templateUrl: 'app/viewHome/home.html',
+            templateUrl: 'app/viewWiki/wiki.html',
             controller: 'wikiCtrl'
         });
     }])

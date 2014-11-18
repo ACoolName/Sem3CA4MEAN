@@ -12,15 +12,15 @@ describe('my app', function () {
 
     browser.get('/');
 
-    it('should automatically redirect to /home when location hash/fragment is empty', function () {
-        expect(browser.getLocationAbsUrl()).toMatch("/home");
+    it('should automatically redirect to /wiki when location hash/fragment is empty', function () {
+        expect(browser.getLocationAbsUrl()).toMatch("/wiki");
     });
 
 
     describe('wiki', function () {
 
         beforeEach(function (done) {
-            browser.get('#/home');
+            browser.get('#/wiki');
             Wiki.remove({}, function () {
                 var array = [
 

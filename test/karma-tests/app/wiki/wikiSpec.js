@@ -1,8 +1,8 @@
 'use strict';
 
-describe('meanApp.home module', function () {
+describe('meanApp.viewWiki module', function () {
     var scope, httpBackendMock, ctrl;
-    beforeEach(module('meanApp.view1'));
+    beforeEach(module('meanApp.viewWiki'));
 
     beforeEach(inject(function ($httpBackend, $rootScope, $controller) {
         httpBackendMock = $httpBackend;
@@ -41,8 +41,8 @@ describe('meanApp.home module', function () {
         it('should recieve the title and abstract', inject(function($controller){
             var dummy={
                 title:"An American in Paris",
-                abstract:"An American in Paris is a symphonic composition by American composer George Gershwin which debuted in 1928. Inspired by Gershwin's time in Paris, it is in the form of an extended tone poem evoking the sights and energy of the French capital in the 1920s.",
-            }
+                abstract:"An American in Paris is a symphonic"
+            };
             httpBackendMock.expectGET('api/wiki').respond(dummy);
             httpBackendMock.flush();
             expect(scope.wikis).toEqual(dummy);

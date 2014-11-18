@@ -8,8 +8,8 @@ angular.module('meanApp', [
     'meanApp.services',
     'meanApp.factories',
     'meanApp.filters',
-    'meanApp.view1',
-    'meanApp.view2',
+    'meanApp.viewWiki',
+    'meanApp.viewCategories',
     'ui.bootstrap'
 ])
     .config(['$routeProvider', function ($routeProvider) {
