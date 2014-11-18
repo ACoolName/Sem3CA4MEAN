@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Wiki = mongoose.model('wiki');
+var Wiki = mongoose.model('Wiki');
 
 
 function getWiki (title, callback) {
