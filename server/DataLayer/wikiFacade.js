@@ -1,12 +1,20 @@
+var Wiki = require("../model/wikis");
 
-function WikiFacade() {
-
-
+function getWiki (title, callback) {
+    Wiki.getWiki(title, callback);
+}
+function findWiki (searchString, callback) {
+    Wiki.findWiki(searchString, callback);
+}
+function getCategories (callback) {
+    Wiki.getCategories(callback);
 }
 
-WikiFacade.prototype.getWiki = function (title) {}
-WikiFacade.prototype.findWiki = function (searchString) {}
-WikiFacade.prototype.getCategories = function () {}
-WikiFacade.prototype.getWikisWithCategory = function (category) {}
+function getWikisWithCategory(category, callback) {
+    Wiki.getWikisWithCategory(category, callback);
+}
 
-module.exports = {WikiFacade: WikiFacade};
+module.exports = {getWiki:getWiki,
+		  findWiki:findWiki,
+		  getCategories:getCategories,
+		  getWikisWithCategory:getWikisWithCategory};

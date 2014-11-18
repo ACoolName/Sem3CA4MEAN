@@ -48,7 +48,6 @@ process.on('SIGINT', function () {
 
 
 //Wiki schema
-
 var wikiSchema = new mongoose.Schema({
     title: String,
     url: String,
@@ -56,7 +55,7 @@ var wikiSchema = new mongoose.Schema({
     categories: [{type: String}],
     headings: [{
         heading:{type: String},
-        position:{type:Number}
+        position:{type:String}
     }],
     links: String
 });
