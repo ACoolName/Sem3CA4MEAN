@@ -21,9 +21,11 @@ describe('my app', function () {
 
         beforeEach(function (done) {
             browser.get('#/wiki');
+            console.log("beorere");
             Wiki.remove({}, function () {
                 var array = [
-
+                    {title: "Fake One", abstract: "A fake abstract"},
+                    {title: "Fake Two", abstract: "A sentence"}
                 ];
                 Wiki.create(array, function (err) {
                     done();
@@ -33,8 +35,13 @@ describe('my app', function () {
 
 
         it('should render view1 when user navigates to /wiki', function () {
-            var wikis = element.all(by.repeater('wiki in wikis'));
-            expect(wikis.count()).toEqual(2);
+            console.log("search");
+            var searchTerm = element(by.model('searchTerm'));
+            searchTerm.sendKeys('Fake');
+            element(by.id('btn1')).click().then(function () {
+                var wikis = element.all(by.repeater('wiki in wikis'));
+                expect(wikis.count()).toEqual(2);
+            });
         });
 
     });

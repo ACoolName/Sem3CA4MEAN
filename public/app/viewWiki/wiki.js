@@ -9,19 +9,13 @@ angular.module('meanApp.viewWiki', ['ngRoute'])
         });
     }])
 
-    .controller('wikiCtrl', function ($scope, $http) {
-        $http({
-            method: 'GET',
-            url: 'api/wiki'
-        }).
-            success(function (data, status, headers, config) {
-                $scope.wikis = data;
-            }).
-            error(function (data, status, headers, config) {
-                $scope.error = data;
-            });
+    .controller('wikiCtrl', ['$scope', 'WikiFactory', function ($scope, WikiFactory) {
         $scope.doSearch = function(){
-            $scope.searchRes="";
-            $scope.searchRes = $scope.searchCriteria;
+            var searchTerm = $scope.searchTerm;
+
+            WikiFactory.findWiki(searchTerm)
+                .success(function (wikis) {
+                    $scope.wikis = wikis;
+                });
         }
-    });
+    }]);
