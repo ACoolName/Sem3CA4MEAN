@@ -3,8 +3,8 @@
 angular.module('meanApp.view1', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/view1', {
-            templateUrl: 'app/view1/view1.html',
+        $routeProvider.when('/wiki', {
+            templateUrl: 'app/viewHome/home.html',
             controller: 'wikiCtrl'
         });
     }])
