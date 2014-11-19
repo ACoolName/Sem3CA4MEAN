@@ -57,7 +57,7 @@ var wikiSchema = new mongoose.Schema({
         heading:{type: String},
         position:{type:String}
     }],
-    links: String
+    links: [{type: String}]
 });
 
 mongoose.model('Wiki',wikiSchema,'wiki');

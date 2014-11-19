@@ -26,8 +26,17 @@ angular.module('meanApp.factories', [])
                 url: 'api/wikilist/' + searchTerm
             })
         };
+
+        var getCategories = function(){
+            return $http({
+                method: 'GET',
+                url: 'api/categories'
+            })
+        }
+
         return {
             getWiki: getWiki,
-            findWiki: findWiki
+            findWiki: findWiki,
+            getCategories: getCategories
         }
     });
