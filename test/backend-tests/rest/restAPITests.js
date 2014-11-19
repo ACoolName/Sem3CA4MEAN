@@ -27,17 +27,6 @@ describe('REST API for /wiki', function () {
         wikiFacade = require('../../../server/DataLayer/wikiFacade');
     });
 
-    beforeEach(function (done) {
-        stub = sinon.stub(wikiFacade, 'getWiki');
-        done();
-    });
-
-    afterEach(function () {
-        if (stub) {
-            stub.restore();
-        }
-    });
-
     after(function () {  //Stop server after the test
         //Uncomment the line below to completely remove the database, leaving the mongoose instance as before the tests
         //mongoose.connection.db.dropDatabase();
@@ -46,6 +35,18 @@ describe('REST API for /wiki', function () {
     });
 
     describe('getWiki tests', function () {
+
+        beforeEach(function (done) {
+            stub = sinon.stub(wikiFacade, 'getWiki');
+            done();
+        });
+
+        afterEach(function () {
+            if (stub) {
+                stub.restore();
+            }
+        });
+
         it('should return a full wiki object', function (done) {
             var title = "Lorain County, Ohio";
             var wikiEntry = {
@@ -80,7 +81,7 @@ describe('REST API for /wiki', function () {
 
         it('should return error if no such title', function (done) {
             var title = "shit";
-            stub.yields("error");
+            stub.yields();
             request.get("http://localhost:" + testPort + "/api/wiki/" + title, {}, function (err, res, body) {
                 res.statusCode.should.equal(404);
                 done();
@@ -88,17 +89,96 @@ describe('REST API for /wiki', function () {
         });
     });
 
-    describe('findWiki tests', function() {
-        it('should return one object with title and abstract', function (done) {
-            var title = "Lorain County, Ohio";
+    describe('findWiki tests', function () {
+
+        beforeEach(function (done) {
+            stub = sinon.stub(wikiFacade, 'findWiki');
+            done();
+        });
+
+        afterEach(function () {
+            if (stub) {
+                stub.restore();
+            }
+        });
+
+        it('should return a list with one object with title and abstract', function (done) {
+            var search = "Lorain County, Ohio";
             var result = {
                 "title": "Lorain County, Ohio",
                 "abstract": "Lorain County is a county located in the northeastern region state of Ohio, United States, and is considered to be a part of what is locally referred to as Greater Cleveland. As of 2000, its population is 284,664."
             };
             stub.yields(null, result);
-            request.get("http://localhost:" + testPort + "/api/find/" + title)
+            request.get("http://localhost:" + testPort + "/api/wikilist/" + search, function (err, res, body) {
+                body.should.equal(JSON.stringify(result));
+                done();
+            });
 
+        });
+
+        it('should return an empty list', function (done) {
+            var search = "Lorsdin County, Ohio";
+            stub.yields();
+            request.get("http://localhost:" + testPort + "/api/wikilist/" + search, function (err, res, body) {
+                res.statusCode.should.equal(404);
+                done();
+            })
         })
-    })
+    });
+
+    describe('getDescriptions tests', function () {
+
+        it('should return a list of categories', function (done) {
+            stub = sinon.stub(wikiFacade, 'getCategories');
+            var result = ['cars', 'poop', 'lolz', 'last one'];
+            stub.yields(null, result);
+            request.get("http://localhost:" + testPort + "/api/categories", function (err, res, body) {
+                body.should.equal(JSON.stringify(result));
+                stub.restore();
+                done();
+            });
+        });
+    });
+
+    describe('getWikisWithCategory tests', function () {
+        beforeEach(function (done) {
+            stub = sinon.stub(wikiFacade, 'getWikisWithCategory');
+            done();
+        });
+
+        afterEach(function () {
+            if (stub) {
+                stub.restore();
+            }
+        });
+
+        it('should return a list of titles and abstracts from one category', function (done) {
+            var search = "IT";
+            var result = [
+                {
+                    "title": "computer science",
+                    "abstract": "bla bla bla"
+                },
+                {
+                    "title": "computer science",
+                    "abstract": "bla bla bla"
+                }
+            ];
+            stub.yields(null, result);
+            request.get("http://localhost:" + testPort + "/api/categories/" + search, function (err, res, body) {
+                body.should.equal(JSON.stringify(result));
+                done();
+            });
+        });
+
+        it('should return an empty list (nothing found)', function (done) {
+            var search = "IT";
+            stub.yields();
+            request.get("http://localhost:" + testPort + "/api/categories/" + search, function (err, res, body) {
+                res.statusCode.should.equal(404);
+                done();
+            });
+        });
+    });
 
 });
