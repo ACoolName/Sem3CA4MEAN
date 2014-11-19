@@ -5,11 +5,11 @@ angular.module('meanApp.viewWiki', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/wiki', {
             templateUrl: 'app/viewWiki/wiki.html',
-            controller: 'wikiCtrl'
-        });
+            controller: 'wikiFindCtrl'
+        })
     }])
 
-    .controller('wikiCtrl', ['$scope', 'WikiFactory', function ($scope, WikiFactory) {
+    .controller('wikiFindCtrl', ['$scope', 'WikiFactory', function ($scope, WikiFactory) {
         $scope.doSearch = function(){
             var searchTerm = $scope.searchTerm;
 

@@ -9,6 +9,8 @@ angular.module('meanApp.viewCategories', ['ngRoute'])
         });
     }])
 
-    .controller('categoriesCtrl',['$scope','InfoFactory','InfoService', function($scope,InfoFactory,InfoService) {
-        //to do here
+    .controller('categoriesCtrl',['$scope','WikiFactory', function($scope,WikiFactory) {
+        WikiFactory.getCategories().success(function(cat){
+            $scope.categories=cat;
+        })
     }]);
