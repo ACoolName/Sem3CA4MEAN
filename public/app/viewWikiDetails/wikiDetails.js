@@ -12,5 +12,6 @@ angular.module('meanApp.viewWikiDetails', ['ngRoute'])
         $scope.wikiTitle= $routeParams.title;
             WikiFactory.getWiki($scope.wikiTitle).success(function(wikis){
                 $scope.wikiDetails=wikis;
+                console.log(typeof $scope.wikiDetails.links);
             })
     }]);

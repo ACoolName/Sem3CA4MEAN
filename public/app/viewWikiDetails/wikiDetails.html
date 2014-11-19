@@ -8,58 +8,61 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+                    <label class="col-sm-2 control-label">Title: </label>
                     <div class="col-sm-10">
-                        <input type="text" placeholder="Address Line 1" class="form-control">
+                        <label>{{wikiDetails.title}}</label>
                     </div>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="textinput">Line 2</label>
+                    <label class="col-sm-2 control-label" for="textinput">URL</label>
                     <div class="col-sm-10">
-                        <input type="text" placeholder="Address Line 2" class="form-control">
+                        <label><a href="{{wikiDetails.url}}">{{wikiDetails.url}}</a></label>
                     </div>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="textinput">City</label>
+                    <label class="col-sm-2 control-label" for="textinput">Abstract</label>
                     <div class="col-sm-10">
-                        <input type="text" placeholder="City" class="form-control">
-                    </div>
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="textinput">State</label>
-                    <div class="col-sm-4">
-                        <input type="text" placeholder="State" class="form-control">
+                        <label>{{wikiDetails.abstract}}</label>
                     </div>
 
-                    <label class="col-sm-2 control-label" for="textinput">Postcode</label>
-                    <div class="col-sm-4">
-                        <input type="text" placeholder="Post Code" class="form-control">
-                    </div>
-                </div>
 
-
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="textinput">Country</label>
+                <!-- Table data for Categories-->
+                <div>
+                    <label class="col-sm-2 control-label" for="textinput">Heading</label>
                     <div class="col-sm-10">
-                        <input type="text" placeholder="Country" class="form-control">
+                        <ul ng-repeat="dataDetails in wikiDetails.categories">
+                            <li>
+                                    {{dataDetails}}
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="pull-right">
-                            <button type="submit" class="btn btn-default">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                        </div>
+                <div>
+                    <label class="col-sm-2 control-label" >Links</label>
+                    <div class="col-sm-10">
+                        <ul ng-repeat="dataLink in wikiDetails.links">
+                            <li>
+                               <a href="{{datalink}}"> {{dataLink}}</a>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+
+                <div>
+                    <label class="col-sm-2 control-label" for="textinput">Categories</label>
+                    <div class="col-sm-10">
+                        <ul ng-repeat="dataHeadings in wikiDetails.headings">
+                            <li>
+                                {{dataHeadings.heading}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 </div>
 
             </fieldset>
