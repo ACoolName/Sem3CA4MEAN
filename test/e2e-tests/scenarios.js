@@ -28,20 +28,25 @@ describe('my app', function () {
                     {title: "Fake Two", abstract: "A sentence"}
                 ];
                 Wiki.create(array, function (err) {
-                    done();
+		    Wiki.find({}, function(err, obj){
+			done();
+		    });
                 });
             });
+
         });
 
 
         it('should render view1 when user navigates to /wiki', function () {
             console.log("search");
             var searchTerm = element(by.model('searchTerm'));
-            searchTerm.sendKeys('Fake');
-            element(by.id('btn1')).click().then(function () {
+            searchTerm.sendKeys('fake');
+	    var res = element(by.id('btn1')).click();
+	    res.then(function() {
                 var wikis = element.all(by.repeater('wiki in wikis'));
                 expect(wikis.count()).toEqual(2);
-            });
+	    });
+	    
         });
 
     });

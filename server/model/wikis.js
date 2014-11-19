@@ -9,11 +9,15 @@ function getWiki (title, callback) {
 }
 
 function findWiki (searchString, callback) {
-    searchString = "." + searchString + ".";
+    searchString = ".*" + searchString + ".*";
     Wiki.find({"title": new RegExp(searchString, "i")},
 	      function (err, entity) {
-        err ? callback(err) : callback(null, entity);
-    });
+		  var res = entity.map(function (obj) {
+		      return {title: obj.title,
+			      abstract: obj.abstract};
+		      });
+		      callback(null, res);
+	});
 }
 
 
