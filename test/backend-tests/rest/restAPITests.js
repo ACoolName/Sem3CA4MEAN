@@ -85,7 +85,20 @@ describe('REST API for /wiki', function () {
                 res.statusCode.should.equal(404);
                 done();
             });
-        })
+        });
     });
+
+    describe('findWiki tests', function() {
+        it('should return one object with title and abstract', function (done) {
+            var title = "Lorain County, Ohio";
+            var result = {
+                "title": "Lorain County, Ohio",
+                "abstract": "Lorain County is a county located in the northeastern region state of Ohio, United States, and is considered to be a part of what is locally referred to as Greater Cleveland. As of 2000, its population is 284,664."
+            };
+            stub.yields(null, result);
+            request.get("http://localhost:" + testPort + "/api/find/" + title)
+
+        })
+    })
 
 });
