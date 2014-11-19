@@ -32,11 +32,19 @@ angular.module('meanApp.factories', [])
                 method: 'GET',
                 url: 'api/categories'
             })
-        }
+        };
+
+        var getWikisInCategory = function(searchTerm){
+            return $http({
+                method: 'GET',
+                url: 'api/categories/'+searchTerm
+            })
+        };
 
         return {
             getWiki: getWiki,
             findWiki: findWiki,
-            getCategories: getCategories
+            getCategories: getCategories,
+            getWikisInCategory: getWikisInCategory
         }
     });

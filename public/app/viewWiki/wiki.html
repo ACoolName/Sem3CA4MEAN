@@ -7,12 +7,6 @@
     </div>
     </br>
     <div class="pad">
-        <ul>
-            <p style="color: red">{{error}}</p>
-            <li ng-repeat="wiki in wikis | filter:searchRes:strict | orderBy:'title'" >
-               <div><span popover="{{wiki.abstract}}"  popover-trigger="mouseenter" popover-placement="right" popover-popup-delay="3000"><a href="#/wiki/{{wiki.title}}">{{wiki.title}}</a></span></div>
-            </li>
-
-        </ul>
+        <wikis></wikis>
     </div>
 </div>
