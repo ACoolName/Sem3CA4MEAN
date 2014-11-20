@@ -2,7 +2,8 @@
     <div class="navbar-inner">
         <div class="container">
             <ul class="pager subnav-pager">
-                <a style="margin-right: 4px" href="#" ng-repeat="nav in navigationBarStringTOArrayWIthToManyLettersThatAreUpperCased">{{nav}}</a>
+                <a style="margin-right: 4px" href="" ng-click="nagivationClick(nav)"
+                   ng-repeat="nav in navigationBarStringTOArrayWIthToManyLettersThatAreUpperCased">{{nav}}</a>
             </ul>
         </div>
     </div>
@@ -12,8 +13,8 @@
 
 <div>
     <accordion close-others="oneAtATime">
-        <accordion-group heading="{{category}}" ng-repeat="category in currentCategories">
-            {{category}}
+        <accordion-group heading="{{category}}" ng-repeat="category in currentCategories" ng-click="click(category)">
+            <wikis></wikis>
         </accordion-group>
     </accordion>
 

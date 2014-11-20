@@ -1,7 +1,7 @@
 global.TEST_DATABASE = "mongodb://localhost/TestDataBase_MEAN";
 
 var should = require("should");
-var app = require("../../../server/app");
+var app = require("../../server/app");
 var http = require("http");
 var sinon = require('sinon');
 var request = require('request');
@@ -24,7 +24,7 @@ describe('REST API for /wiki', function () {
             .on('error', function (err) {
                 console.log(err);
             });
-        wikiFacade = require('../../../server/DataLayer/wikiFacade');
+        wikiFacade = require('../../server/DataLayer/wikiFacade');
     });
 
     after(function () {  //Stop server after the test

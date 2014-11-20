@@ -10,7 +10,7 @@ angular.module('meanApp.directives', [])
             template:  '<ul>'+
             '<p style="color: red">{{error}}</p>'+
             '<li ng-repeat="wiki in wikis | filter:searchRes:strict"> '+
-            '<div><span popover="{{wiki.abstract}}"  popover-trigger="mouseenter" popover-placement="right" popover-popup-delay="3000"><a href="#/wiki/{{wiki.title}}">{{wiki.title}}hhhh</a></span></div>'+
+            '<div><span popover="{{wiki.abstract}}"  popover-trigger="mouseenter" popover-placement="right" popover-popup-delay="500"><a href="#/wiki/{{wiki.title}}">{{wiki.title}}</a></span></div>'+
             '</li>'+
             '</ul>'
         };

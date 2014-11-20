@@ -12,7 +12,7 @@ describe('meanApp.viewCategories module', function () {
         ctrl = $controller('categoriesCtrl', {$scope: scope});
     }));
 
-    describe('wikiGetCtrl controller functionality test in full isolation', function () {
+    describe('wikiGetCtrl controller functionality test', function () {
 
         it('should exist', function () {
             expect(ctrl).toBeDefined();
@@ -22,7 +22,7 @@ describe('meanApp.viewCategories module', function () {
             var dummy=["asd","bbb"];
             httpBackendMock.expectGET('api/categories').respond(dummy);
             httpBackendMock.flush();
-            expect(scope.categories.length).toEqual(2);
+            expect(scope.currentCategories.length).toEqual(2);
         });
 
     });
