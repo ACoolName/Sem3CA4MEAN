@@ -12,6 +12,10 @@ angular.module('meanApp.viewCategories', ['ngRoute'])
     .controller('categoriesCtrl',['$scope','WikiFactory', function($scope,WikiFactory) {
         $scope.oneAtATime = true;
 
+        var str = "0123456789abcdefghijklmnopqrstuvwxyz";
+
+        $scope.navigationBarStringTOArrayWIthToManyLettersThatAreUpperCased = str.split("");
+
         $scope.currentPage = 1;
 
         $scope.setPage = function (pageNo) {
