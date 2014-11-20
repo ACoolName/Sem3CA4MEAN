@@ -21,7 +21,7 @@ if (typeof global.TEST_DATABASE != "undefined") {
     dbURI = global.TEST_DATABASE;
 }
 else {
-    dbURI = 'mongodb://localhost/wiki';
+    dbURI = 'mongodb://icanteven:icanteven@ds031349.mongolab.com:31349/sem3ca4mean';
 }
 
 mongoose.connect(dbURI);
