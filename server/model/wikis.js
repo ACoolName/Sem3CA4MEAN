@@ -23,6 +23,8 @@ function findWiki (searchString, callback) {
 
 function getCategories (callback) {
     Wiki.find().distinct('categories', function (err, entities) {
+        var index = entities.indexOf(null);
+        entities.splice(index, 1);
         err ? callback(err) : callback(null, entities);
     });
 }

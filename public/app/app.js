@@ -10,7 +10,6 @@ angular.module('meanApp', [
     'meanApp.filters',
     'meanApp.viewWiki',
     'meanApp.viewCategories',
-    'meanApp.viewCategoriesWiki',
     'meanApp.viewWikiDetails',
     'ui.bootstrap'
 ])

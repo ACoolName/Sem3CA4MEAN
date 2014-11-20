@@ -1,6 +1,6 @@
 'use strict';
 
-describe('meanApp.viewWiki module', function () {
+describe('meanApp.viewCategories module', function () {
     var scope, httpBackendMock, ctrl, wikiFactory;
     beforeEach(module('meanApp.viewCategories'));
     beforeEach(module('meanApp.factories'));
@@ -18,12 +18,12 @@ describe('meanApp.viewWiki module', function () {
             expect(ctrl).toBeDefined();
         });
 
-        it('should get the details about a wiki',function(){
+        it('Should get all categories', function () {
             var dummy=["asd","bbb"];
             httpBackendMock.expectGET('api/categories').respond(dummy);
             httpBackendMock.flush();
             expect(scope.categories.length).toEqual(2);
-        })
-    })
+        });
 
+    });
 });
