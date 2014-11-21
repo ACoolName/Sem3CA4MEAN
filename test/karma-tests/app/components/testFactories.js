@@ -7,16 +7,18 @@ describe('meanApp.factories', function () {
     }));
     describe('WikiFactory', function () {
         var wikiFactory;
+        var title = "Fake wiki title";
+        var fakeWiki = {
+            title: title
+        };
+
         beforeEach(inject(function (_WikiFactory_) {
             wikiFactory = _WikiFactory_;
         }));
 
         describe('getWiki', function () {
             it('should return a promise containing a wiki page', function () {
-                var title = "Fake wiki title";
-                var fakeWiki = {
-                    title: title
-                };
+
                 httpBackend.expectGET('api/wiki/' + title).respond(fakeWiki);
                 wikiFactory.getWiki(title)
                     .success(function (data) {
@@ -51,6 +53,5 @@ describe('meanApp.factories', function () {
                 httpBackend.flush();
             });
         });
-
     });
 });

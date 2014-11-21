@@ -59,7 +59,7 @@ router.get('/categories/:search', function (req, res) {
 
 module.exports = router;
 
-router.post('wiki/:title',function(req,rest){
+router.post('/wiki',function(req,res){
     var wiki = req.body;
     wikiFacade.addWiki(wiki,function(err,wiki){
         if (err) {

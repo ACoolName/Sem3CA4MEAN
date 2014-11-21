@@ -32,10 +32,15 @@ angular.module('meanApp.factories', [])
             })
         };
 
+        var addWiki = function(wiki){
+            return $http.post('api/wiki/', wiki);
+        };
+
         return {
             getWiki: getWiki,
             findWiki: findWiki,
             getCategories: getCategories,
-            getWikisInCategory: getWikisInCategory
+            getWikisInCategory: getWikisInCategory,
+            addWiki: addWiki
         }
     });

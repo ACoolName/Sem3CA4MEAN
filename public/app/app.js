@@ -9,6 +9,7 @@ angular.module('meanApp', [
     'meanApp.factories',
     'meanApp.filters',
     'meanApp.viewWiki',
+    'meanApp.viewAddWiki',
     'meanApp.viewCategories',
     'meanApp.viewWikiDetails',
     'meanApp.viewCategoriesWiki',

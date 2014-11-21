@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Documentation</title>
+  <meta charset="UTF-8">
+  <title>Documentation</title>
 </head>
 <body>
-<p>
-    Overall functionality:
-    In the front page you can enter the desired search string and press 'Search' and it will return the full list
-    of results. If you hover your mouse over an item in the list for 5 seconds, a pop up with the 'abstract' will apprear.
-    When you click on a item it will bring you to the view with details about that wiki. Clicking on a category inside
-    the wiki details view, will take you to a page with all the wikis within that category.
+<h1>Overall functionality</h1>
 
-    In the menu we also have a 'Category' entry. When you click on that it will take you to the all category page.
-    The use of this page is easy and self explanatory.
+<p>
+  In the front page you can enter the desired search string and press 'Search' and it will return the full list
+  of results. If you hover your mouse over an item in the list for a little while, a pop up with the 'abstract' will
+  appear.
+  When you click on a item it will bring you to the view with details about that wiki. Clicking on a category inside
+  the wiki details view, will take you to a page with all the wikis within that category.
+
+  In the menu we also have a 'Category' entry. When you click on that it will take you to the all category page.
+  The use of this page is easy and self explanatory.
+
+  There is also an add wiki button in the menu that takes you to Part 4.1 of the CA. It is a fully functional wiki
+  creation tool.
 </p>
 
-<p>Who did what?
-    As with the other projects we split our work into 2 groups of 2.
-    Martin, Tobias and Teodor worked mostly on the back-end in the start and Raul
-    worked on the front-end. Half way into the project we had enough things to do
-    that everyone started working on the own parts of the project and did a little here
-    and a little there which should be clear in the Github commit log.</p>
+<h1>Who did what?</h1>
+
+<p>
+  In this project we did things a bit different, in the beginning Raul worked on the front-end
+  while Martin worked on the back-end, Teodor worked on the api together with Tobias in pair programming
+  so that he Teodor could learn more about testing. Tobias took the role of supervisor when he wasn't needed
+  next to Teodor. During the project things did change and everyone worked and helped out on all parts of the project
+  which should be apparent from Git. Git users are, Sallas = Tobias; Marto1 = Martin; stelescuraul = Raul; TeodorDumitru
+  = Teodor.
+</p>
+
+<h1>Design back-end</h1>
+
+<p>
+  We tried to make the back-end as robust and stable as possible. To achieve that goal we have used a
+  facade that would be the middle point between the REST api and the database.
+</p>
 
 
-Design back-end:
-We tried to make the back-end as robust and stable as possible. To achieve that goal we have used a
-facade that would be the middle point between the REST api and the database.
+<h1>Design front-end</h1>
 
-Design front-end:
-When it comes to the front-end, we divided every functionality into its folder/file. For example, for the directives,
-there is a file for directives inside the components folder that handles all the directives.
-The application is SPA and uses different routes for different views.
+<p>
+  When it comes to the front-end, we divided every functionality into its folder/file. For example, for the directives,
+  there is a file for directives inside the components folder that handles all the directives.
+  The application is SPA and uses different routes for different views.
+</p>
 
 
-Testing
-Testing is what we have focused more in this CA. We have three kind of tests: backend tests, end-to-end tests and front end
-tests.
+<h1>Testing</h1>
 
-Backend tests uses Mocka together with Should to make sure we had consistent and quit tests that didn't interfere with
-the real database. There is a database created only for these tests (mongodb://localhost/TestDataBase_MEAN).
-Here, we are testing the REST API and our helper class wikis to ensure full functionality and stability.
+<p>
+  Testing is what we have tried to focus the most on in this CA, and mostly the learning part of it.
+  We have three kind of tests: backend tests, end-to-end tests and front-end tests.
 
-End-to-end tests are full integration tests.
+  Backend tests uses Mocka together with Should to make sure we had consistent and quit tests that didn't interfere with
+  the real database. There is a database created only for these tests (mongodb://localhost/TestDataBase_MEAN).
+  Here, we are testing the REST API and our helper class wikis to ensure full functionality and stability.
+  Some of these tests are in full isolation to prevent any coupling issues to interfere with the tests. This is done
+  using sinon and it's stubbing features.
 
-Front-end tests uses karma. We are testing everything in isolation and we mock the back-end to ensure the isolation test.
+  End-to-end tests using protractor are full feature integration tests using a test database allowing us to insert,
+  remove and check data.
 
+  Front-end tests uses karma. We are testing most things in as much isolation as we can, fx the back-end is always mocked away
+  using $httpBackened and we also used jasmines built in spyOn functionality to isolated certain tests.
+  test.
+</p>
 
 </body>
 </html>
