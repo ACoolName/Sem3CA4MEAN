@@ -90,32 +90,12 @@ describe('wiki wrapper test', function () {
 
     describe('add wiki',function(){
         it('should return new wiki object',function(done){
-            var dummy = {
-                title: "a",
-                url: "b",
-                abstract: "c",
-                categories: ["aa",
-                    "bb",
-                    "cc",
-                    "dd",
-                    "ee"],
-                headings: [
-                    {
-                        heading: "asd",
-                        position: "1"
-                    },
-                    {
-                        heading: "qwewqe",
-                        position: "2"
-                    }
-                ],
-                links: ["http://en.wikipedia.org/wiki/1920s", "http://en.wikipedia.org/wiki/Gene_Kelly"]
-            };
-            var newWiki = new wikiModel(dummy);
-            newWiki.save();
-            var f = wiki.addWiki(newWiki,function(err,ent){
-                ent.size().should.equal(2);
+            wiki.addWiki(dummyData,function(err,ent){
+                var title = "An American in Paris";
+                ent.title.should.equal(title);
+                done()
             })
+
         })
     })
 

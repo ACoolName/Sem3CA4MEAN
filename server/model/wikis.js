@@ -48,7 +48,7 @@ function getWikisWithCategory(searchString, callback){
 }
 
 function addWiki(wiki,callback){
-    new Wiki(wiki).insert(function(err,obj){
+    new Wiki(wiki).save(function(err,obj){
         err ? callback(err) : callback(null, obj);
     })
 }
