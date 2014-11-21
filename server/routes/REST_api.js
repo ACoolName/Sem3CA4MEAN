@@ -62,9 +62,7 @@ module.exports = router;
 router.post('/wiki',function(req,res){
     var wiki = req.body;
     wikiFacade.addWiki(wiki,function(err,wiki){
-        if (err) {
-            res.status(err.status || 400);
-            res.end(JSON.stringify({error: err.toString()}));
+        if (errorHandler.errorHandle(err, res, 400, 'cannot add this wiki')) {
             return;
         }
         res.header("Content-type","application/json");
