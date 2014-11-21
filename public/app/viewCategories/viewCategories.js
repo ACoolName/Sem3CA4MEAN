@@ -10,7 +10,7 @@ angular.module('meanApp.viewCategories', ['ngRoute'])
     }])
 
     .controller('categoriesCtrl', ['$scope', 'WikiFactory', function ($scope, WikiFactory) {
-        var str = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var str = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         $scope.navigationBarStringTOArrayWIthToManyLettersThatAreUpperCased = str.split("");
         $scope.navigationBarStringTOArrayWIthToManyLettersThatAreUpperCased.push("ALL");
         $scope.oneAtATime = true;
@@ -34,6 +34,7 @@ angular.module('meanApp.viewCategories', ['ngRoute'])
                 selectedCategories = allCategories;
             } else {
                 selectedCategories = allCategories.filter(function (e) {
+                    if(e == null) { return false; }
                     return e[0].toUpperCase() === searchTerm;
                 });
             }
