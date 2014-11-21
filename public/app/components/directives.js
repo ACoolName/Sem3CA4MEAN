@@ -112,7 +112,7 @@ angular.module('meanApp.directives', [])
                 '<label>Wikis in category: <label style="color: lightskyblue"> {{cate}}</label> </label>'+
             '<ul ng-repeat="categ in catWithWiki">'+
             '<li>'+
-            '<div><span popover="{{categ.abstract}}"  popover-trigger="mouseenter" popover-placement="right" popover-popup-delay="3000">{{categ.title}}</span></div>'+
+            '<div><span popover="{{categ.abstract}}"  popover-trigger="mouseenter" popover-placement="right" popover-popup-delay="3000"><a href="#/wiki/{{categ.title}}">{{categ.title}}</a></span></div>'+
             '</li>'+
             '</ul>'
         }
