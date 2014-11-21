@@ -3,15 +3,6 @@
 /* Factories */
 
 angular.module('meanApp.factories', [])
-    .factory('InfoFactory', function () {
-        var info = "Hello World from a Factory";
-        var getInfo = function getInfo() {
-            return info;
-        };
-        return {
-            getInfo: getInfo
-        }
-    })
     .factory('WikiFactory', function ($http) {
         var getWiki = function (title) {
             return $http({

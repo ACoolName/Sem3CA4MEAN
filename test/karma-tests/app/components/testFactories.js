@@ -5,19 +5,6 @@ describe('meanApp.factories', function () {
     beforeEach(inject(function ($httpBackend) {
         httpBackend = $httpBackend;
     }));
-
-    describe('InfoFactory', function () {
-        var infoFactory;
-        beforeEach(inject(function (_InfoFactory_) {
-            infoFactory = _InfoFactory_;
-        }));
-
-        it('Should be Hello World from a Factory', function () {
-            expect(infoFactory.getInfo()).toBe("Hello World from a Factory");
-        });
-    });
-
-
     describe('WikiFactory', function () {
         var wikiFactory;
         beforeEach(inject(function (_WikiFactory_) {

@@ -12,5 +12,15 @@ angular.module('meanApp.viewWikiDetails', ['ngRoute'])
         $scope.wikiTitle= $routeParams.title;
             WikiFactory.getWiki($scope.wikiTitle).success(function(wikis){
                 $scope.wikiDetails=wikis;
-            })
+            });
+        $scope.linkClick = function (url) {
+            var title = url.split("/").pop().replace('_', ' ');
+            WikiFactory.getWiki(title)
+                .success(function (wiki) {
+                    window.location = "#/wiki/" + title;
+                })
+                .error(function () {
+                    window.location = url;
+                });
+        }
     }]);

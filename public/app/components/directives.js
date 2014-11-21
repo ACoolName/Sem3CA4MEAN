@@ -80,7 +80,7 @@ angular.module('meanApp.directives', [])
                         '<div class="col-sm-10">'+
                         '<ul ng-repeat="dataLink in wikiDetails.links">'+
                         '<li>'+
-                        '<a href="{{dataLink}}"> {{dataLink}}</a>'+
+                        '<a href="" ng-click="linkClick(dataLink, wikiDetails.title)"> {{dataLink}}</a>'+
                         '</li>'+
                         '</ul>' +
                         '</div>'+
