@@ -5,35 +5,47 @@
     <title>Documentation</title>
 </head>
 <body>
+<p>
+    Overall functionality:
+    In the front page you can enter the desired search string and press 'Search' and it will return the full list
+    of results. If you hover your mouse over an item in the list for 5 seconds, a pop up with the 'abstract' will apprear.
+    When you click on a item it will bring you to the view with details about that wiki. Clicking on a category inside
+    the wiki details view, will take you to a page with all the wikis within that category.
+
+    In the menu we also have a 'Category' entry. When you click on that it will take you to the all category page.
+    The use of this page is easy and self explanatory.
+</p>
+
 <p>Who did what?
     As with the other projects we split our work into 2 groups of 2.
-    Martin and Tobias worked mostly on the back-end in the start and Teodor and Raul
+    Martin, Tobias and Teodor worked mostly on the back-end in the start and Raul
     worked on the front-end. Half way into the project we had enough things to do
-    that every started working on the own parts of the project and did a little here
+    that everyone started working on the own parts of the project and did a little here
     and a little there which should be clear in the Github commit log.</p>
 
 
 Design back-end:
+We tried to make the back-end as robust and stable as possible. To achieve that goal we have used a
+facade that would be the middle point between the REST api and the database.
 
-One of the most important principles in programming is DRY and during all of our
-projects we try and design the structure and code in a way that we can abide to
-this principle. The biggest examples of this is our abstract classes for our model
-helper classes and the most common REST routes.
+Design front-end:
+When it comes to the front-end, we divided every functionality into its folder/file. For example, for the directives,
+there is a file for directives inside the components folder that handles all the directives.
+The application is SPA and uses different routes for different views.
 
 
 Testing
+Testing is what we have focused more in this CA. We have three kind of tests: backend tests, end-to-end tests and front end
+tests.
 
-We decided to focus our testing on the different model helper classes
-as most of the other code uses either code written for express or front end code which
-we'll learn how to test next period.
+Backend tests uses Mocka together with Should to make sure we had consistent and quit tests that didn't interfere with
+the real database. There is a database created only for these tests (mongodb://localhost/TestDataBase_MEAN).
+Here, we are testing the REST API and our helper class wikis to ensure full functionality and stability.
 
-We used Mocka together with Should and to make sure we had a consistent and quick tests
-that also didn't interfere with any database we used mockgoose https://www.npmjs.org/package/mockgoose.
-Mockgoose creates intercepts connection calls made by mongoose and redirect them to a
-in memory "database" instead of relying on a mongodb database.
-It handles most functionality that mongoose has, at least enough for this project.
-To make sure of consistency we made a modified version of the import_database script that
-we run before each test which allows us to reset the "database". We also used a smaller
-dataset to ensure quick speed and a controlled test environment.
+End-to-end tests are full integration tests.
+
+Front-end tests uses karma. We are testing everything in isolation and we mock the back-end to ensure the isolation test.
+
+
 </body>
 </html>
