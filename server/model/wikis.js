@@ -47,9 +47,16 @@ function getWikisWithCategory(searchString, callback){
     });
 }
 
+function addWiki(wiki,callback){
+    new Wiki(wiki).save(function(err,obj){
+        err ? callback(err) : callback(null, obj);
+    })
+}
+
 
 module.exports = {getWiki:getWiki,
 		  findWiki:findWiki,
 		  getCategories:getCategories,
 		  getWikisWithCategory:getWikisWithCategory,
-		  getWikisWithCategoryWhole:getWikisWithCategoryWhole};
+		  getWikisWithCategoryWhole:getWikisWithCategoryWhole,
+          addWiki:addWiki};

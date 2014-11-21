@@ -21,11 +21,11 @@ describe('wiki wrapper test', function () {
         headings: [
             {
                 heading: "Compositions by George Gershwin",
-                position: "1",
+                position: "1"
             },
             {
                 heading: "Symphonic poems",
-                position: "2",
+                position: "2"
             }
         ],
         links: ["http://en.wikipedia.org/wiki/1920s", "http://en.wikipedia.org/wiki/Gene_Kelly"]
@@ -87,6 +87,17 @@ describe('wiki wrapper test', function () {
             });
         });
     });
+
+    describe('add wiki',function(){
+        it('should return new wiki object',function(done){
+            wiki.addWiki(dummyData,function(err,ent){
+                var title = "An American in Paris";
+                ent.title.should.equal(title);
+                done()
+            })
+
+        })
+    })
 
     afterEach(function (done) {
         wikiModel.remove({}, function (err) {
