@@ -14,7 +14,12 @@ function getWikisWithCategory(category, callback) {
     Wiki.getWikisWithCategory(category, callback);
 }
 
+function addWiki(wiki,callback){
+    Wiki.addWiki(wiki,callback);
+}
+
 module.exports = {getWiki: getWiki,
     findWiki: findWiki,
     getCategories: getCategories,
-    getWikisWithCategory: getWikisWithCategory};
+    getWikisWithCategory: getWikisWithCategory,
+    addWiki:addWiki};
