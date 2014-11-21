@@ -11,6 +11,7 @@ angular.module('meanApp', [
     'meanApp.viewWiki',
     'meanApp.viewCategories',
     'meanApp.viewWikiDetails',
+    'meanApp.viewCategoriesWiki',
     'ui.bootstrap'
 ])
     .config(['$routeProvider', function ($routeProvider) {

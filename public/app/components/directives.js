@@ -104,18 +104,6 @@ angular.module('meanApp.directives', [])
                         '</div>'
         };
     })
-    .directive('categories',function(){
-        return{
-            restrict:'AE',
-            replace:'true',
-            template:'<div class="col-sm-10">'+
-            '<ul ng-repeat="cat in categories">'+
-            '<li>'+
-            '<a href="#"> {{cat}}</a>'+
-            '</li>'+
-            '</ul>'
-        }
-    })
     .directive('categoriesWiki',function(){
         return{
             restrict:'AE',

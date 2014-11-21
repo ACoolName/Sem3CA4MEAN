@@ -26,7 +26,6 @@ router.get('/wikilist/:search', function (req, res) {
         if (errorHandler.errorHandle(!wikiList, res, 404, 'not found')) {
             return;
         }
-	console.log(wikiList);
         res.header("Content-type", "application/json");
         res.end(JSON.stringify(wikiList));
     });
